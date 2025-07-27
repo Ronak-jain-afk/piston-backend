@@ -3,8 +3,7 @@ from flask import Flask, request, jsonify
 import requests
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/run": {"origins": "*"}})
 
 PISTON_URL = "https://piston.rs/api/v2/execute"
 
