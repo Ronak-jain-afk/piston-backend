@@ -22,7 +22,7 @@ def run_code():
     }
 
     try:
-        piston_response = requests.post(PISTON_API_URL, json=payload)
+        piston_response = requests.post(PISTON_URL, json=payload)
         piston_response.raise_for_status()
         return jsonify(piston_response.json())
     except requests.RequestException as e:
