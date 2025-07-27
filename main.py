@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-PISTON_URL = "https://emkc.org/api/v2/piston"
+PISTON_URL = "https://piston.rs/api/v2/execute"
 
 @app.route("/run", methods=["POST"])
 def run_code():
