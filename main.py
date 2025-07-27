@@ -1,7 +1,10 @@
+from flask_cors import CORS
 from flask import Flask, request, jsonify
 import requests
 
 app = Flask(__name__)
+CORS(app)
+
 
 PISTON_URL = "https://piston.rs/api/v2/execute"
 
