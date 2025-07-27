@@ -15,16 +15,16 @@ def run_code():
 
         language = data.get("language")
         version = data.get("version")
-        code = data.get("code")
         stdin = data.get("stdin", "")
-        extension = data.get("extension", ".txt")
+        files = data.get("files", [])
+    payload = {
+        "language": language,
+        "version": version,
+        "files": files,
+        "stdin": stdin
+    }
 
-        payload = {
-            "language": language,
-            "version": version,
-            "files": [{"name": f"main{extension}", "content": code}],
-            "stdin": stdin
-        }
+       
 
         print("Sending to Piston:", payload)  # ✅ Log what you're sending
 
